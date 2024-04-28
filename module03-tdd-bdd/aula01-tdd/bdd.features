@@ -1,0 +1,19 @@
+Feature: Create User
+  Background:
+    Given I have a running server
+    Given The current date is "2023-11-23T00:00"
+  
+  Scenario: Create a new user that is 18 years and categorize them as young-adult
+    When I create new user with the following details:
+      | name           | birthDay   |
+      | Icaro Vieira   | 2000-01-01 |
+
+    Then I request the API wih the user's ID
+    Then I should receive a JSON response with the user's details
+    Then The user's category should be "young-adult"
+
+  Scenario: Error when creating a user who is younger than 18 years old
+    When I create a young user with the following details:
+      | name  | birthDay   |
+      | Alice | 2005-01-01 |
+    Then I should receive an error message that the user be at leart 18 years old

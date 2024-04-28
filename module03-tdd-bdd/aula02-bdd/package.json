@@ -1,0 +1,20 @@
+{
+  "name": "jest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "npx cucumber-js",
+    "test:dev": "node --watch node_modules/.bin/cucumber-js --fail-fast --format progress --format html:cucumber-report.html",
+    "test:debug": "node --inspect-brk --watch node_modules/.bin/cucumber-js --format progress --format html:cucumber-report.html",
+    "start": "node --watch src/api.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@cucumber/cucumber": "^10.0.1",
+    "sinon": "^17.0.1"
+  }
+}
