@@ -1,0 +1,32 @@
+name: Cypress Tests - Complete Project
+
+on:
+  push:
+    branches:
+      - main
+
+    paths:
+      - "aula02-e2e-test-frontend-template/**.js"
+      - "aula02-e2e-test-frontend-template/**.json"
+      - "aula02-e2e-test-frontend-template/**.yml"
+
+jobs:
+  complete-project-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20.12.1
+
+      - name: Install dependencies
+        run: npm install
+        working-directory: ./aula02-e2e-test-frontend-template
+
+      - name: Run Cypress tests
+        run: npm run cypress:headless
+        working-directory: ./aula02-e2e-test-frontend-template

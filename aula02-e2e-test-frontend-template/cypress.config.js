@@ -1,7 +1,7 @@
-import { defineConfig } from "cypress";
-import createBundler from "@bahmutov/cypress-esbuild-preprocessor";
 import preprocessor from "@badeball/cypress-cucumber-preprocessor";
 import { createEsbuildPlugin } from "@badeball/cypress-cucumber-preprocessor/esbuild";
+import createBundler from "@bahmutov/cypress-esbuild-preprocessor";
+import { defineConfig } from "cypress";
 
 const { WEB_SERVER_URL } = process.env;
 
@@ -26,5 +26,6 @@ export default defineConfig({
     },
     specPattern: "cypress/e2e/features/*.feature",
     baseUrl: WEB_SERVER_URL,
+    testIsolation: false,
   },
 });

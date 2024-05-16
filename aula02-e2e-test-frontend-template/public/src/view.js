@@ -6,8 +6,6 @@ export default class View {
 
   #submitFn = () => {};
 
-  constructor() {}
-
   initialize() {
     for (const form of this.#forms) {
       form.addEventListener("submit", this.#onSubmit(form), false);

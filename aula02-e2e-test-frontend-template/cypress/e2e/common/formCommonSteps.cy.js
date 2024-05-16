@@ -1,8 +1,6 @@
 import { Given, Then, When } from "@badeball/cypress-cucumber-preprocessor";
 import { registerForm } from "./registerForm.cy.js";
 
-registerForm;
-
 Given("I am on the image registration page", () => {
   cy.visit("/");
 });
