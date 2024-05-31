@@ -25,7 +25,7 @@ export default class View {
             ${char.status}
             </span>
           </div>
-      </li>`
+        </li>`
       )
       .join("\n");
   }
